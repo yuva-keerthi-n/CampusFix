@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* CampusFix visual identity: warm paper background, deep "ink" navy surfaces, vermilion accent. */
+@theme {
+  --font-sans: 'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: #f6f4ef;
+
+  --color-ink-700: #243545;
+  --color-ink-800: #1a2a38;
+  --color-ink-900: #121f2b;
+  --color-ink-950: #0b141c;
+
+  --color-brand-50: #fff3ec;
+  --color-brand-100: #ffe3d2;
+  --color-brand-400: #f78a55;
+  --color-brand-500: #f2622a;
+  --color-brand-600: #dd4f17;
+  --color-brand-700: #b83e10;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-canvas text-slate-800 antialiased; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary { @apply bg-brand-600 text-white shadow-sm hover:bg-brand-700; }
+  .btn-secondary { @apply border border-slate-300 bg-white text-slate-700 hover:bg-slate-50; }
+  .btn-dark { @apply bg-ink-900 text-white hover:bg-ink-700; }
+  .btn-danger { @apply bg-red-600 text-white hover:bg-red-700; }
+  .btn-ghost { @apply text-slate-600 hover:bg-slate-100; }
+  .btn-sm { @apply px-3 py-2 text-xs; }
+
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 disabled:bg-slate-100 disabled:text-slate-500;
+  }
+  .input-error { @apply border-red-400 focus:border-red-500 focus:ring-red-500/20; }
+  .label { @apply mb-1.5 block text-sm font-medium text-slate-700; }
+  .card { @apply rounded-2xl border border-slate-200 bg-white shadow-sm; }
+}

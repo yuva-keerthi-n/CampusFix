@@ -1,0 +1,6 @@
+node_modules/
+.env
+uploads/complaints/*
+uploads/resolutions/*
+!uploads/complaints/.gitkeep
+!uploads/resolutions/.gitkeep
