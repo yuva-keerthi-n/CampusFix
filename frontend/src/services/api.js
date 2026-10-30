@@ -4,8 +4,9 @@ export const TOKEN_KEY = 'campusfix_token';
 export const USER_KEY = 'campusfix_user';
 
 // All requests go to /api (proxied to the Express server by Vite in development).
-const api = axios.create({ baseURL: '/api' });
-
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || '/api'
+});
 // Attach the JWT to every request.
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem(TOKEN_KEY);
